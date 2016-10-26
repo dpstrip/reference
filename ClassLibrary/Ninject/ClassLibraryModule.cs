@@ -1,9 +1,8 @@
-using ClassLibrary.Base;
-using ClassLibrary.Concrete;
-using ClassLibrary.Interfaces;
 using Ninject.Modules;
+using UMV.Reference.ClassLibrary.Concrete;
+using UMV.Reference.ClassLibrary.Interfaces;
 
-namespace ClassLibrary
+namespace UMV.Reference.ClassLibrary.Ninject
 {
     public class ClassLibraryModule : NinjectModule
     {

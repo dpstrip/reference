@@ -1,7 +1,7 @@
-using ClassLibrary.Base;
-using ClassLibrary.Interfaces;
+using UMV.Reference.ClassLibrary.Base;
+using UMV.Reference.ClassLibrary.Interfaces;
 
-namespace ClassLibrary.Concrete
+namespace UMV.Reference.ClassLibrary.Concrete
 {
     public class DogTrainer : Trainer, IDogTrainer
     {

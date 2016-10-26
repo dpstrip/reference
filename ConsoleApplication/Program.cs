@@ -1,9 +1,9 @@
 ﻿using System;
-using ClassLibrary;
-using ClassLibrary.Interfaces;
 using Ninject;
+using UMV.Reference.ClassLibrary.Interfaces;
+using UMV.Reference.ClassLibrary.Ninject;
 
-namespace ConsoleApplication
+namespace UMV.Reference.ConsoleApplication
 {
     class Program
     {

@@ -1,6 +1,6 @@
-﻿using ClassLibrary.Interfaces;
+﻿using UMV.Reference.ClassLibrary.Interfaces;
 
-namespace ClassLibrary.Concrete
+namespace UMV.Reference.ClassLibrary.Concrete
 {
     public class Dog : IDog
     {

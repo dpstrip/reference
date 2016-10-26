@@ -1,7 +1,6 @@
-﻿using ClassLibrary.Interfaces;
-using Ninject;
+﻿using UMV.Reference.ClassLibrary.Interfaces;
 
-namespace ClassLibrary.Base
+namespace UMV.Reference.ClassLibrary.Base
 {
     public abstract class Trainer : ITrainer
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{BE3C3038-4172-4EE8-8B34-7DD4F54622E0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication</RootNamespace>
-    <AssemblyName>ConsoleApplication</AssemblyName>
+    <RootNamespace>UMV.Reference.ConsoleApplication</RootNamespace>
+    <AssemblyName>UMV.Reference.ConsoleApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -55,9 +55,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+    <ProjectReference Include="..\ClassLibrary\UMV.Reference.ClassLibrary.csproj">
       <Project>{8A027039-3BFE-4BA2-9820-E3FB9B9B1666}</Project>
-      <Name>ClassLibrary</Name>
+      <Name>UMV.Reference.ClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
