@@ -14,7 +14,7 @@ namespace UMV.Reference.Tests.Integration
             var dogTrainer = new DogTrainer(dog);
 
             // Act
-            var whatDoesADogSay = dogTrainer.MarkPetSpeak();
+            var whatDoesADogSay = dogTrainer.MakePetSpeak();
 
             // Assert
             Assert.IsTrue(whatDoesADogSay == "WOOF, WOOF");
@@ -28,7 +28,7 @@ namespace UMV.Reference.Tests.Integration
             var catTrainer = new CatTrainer(cat);
 
             // Act
-            var whatDoesACatSay = catTrainer.MarkPetSpeak();
+            var whatDoesACatSay = catTrainer.MakePetSpeak();
 
             // Assert
             Assert.IsTrue(whatDoesACatSay == "WEOW, MEOW");

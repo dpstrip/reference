@@ -11,7 +11,7 @@ namespace UMV.Reference.ClassLibrary.Base
             _pet = pet;
         }
 
-        public string MarkPetSpeak()
+        public string MakePetSpeak()
         {
             return _pet.Speak();
         }

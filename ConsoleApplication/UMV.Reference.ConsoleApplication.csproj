@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UMV.Reference.ConsoleApplication</RootNamespace>
     <AssemblyName>UMV.Reference.ConsoleApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\ClassLibrary\UMV.Reference.ClassLibrary.csproj">
       <Project>{8A027039-3BFE-4BA2-9820-E3FB9B9B1666}</Project>
       <Name>UMV.Reference.ClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Patterns\UMV.Reference.Patterns.csproj">
+      <Project>{bfd098fb-1e4e-4c52-b785-72bba1ffcc7c}</Project>
+      <Name>UMV.Reference.Patterns</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

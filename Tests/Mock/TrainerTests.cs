@@ -26,7 +26,7 @@ namespace UMV.Reference.Tests.Mock
             var dogTrainer = new DogTrainer(_dog.Object);
 
             // Act
-            var whatDoesADogSay = dogTrainer.MarkPetSpeak();
+            var whatDoesADogSay = dogTrainer.MakePetSpeak();
 
             // Assert
             Assert.IsTrue(whatDoesADogSay == "Hello, is it me you're looking for?");
@@ -40,7 +40,7 @@ namespace UMV.Reference.Tests.Mock
             var catTrainer = new CatTrainer(_cat.Object);
 
             // Act
-            var whatDoesACatSay = catTrainer.MarkPetSpeak();
+            var whatDoesACatSay = catTrainer.MakePetSpeak();
 
             // Assert
             Assert.IsTrue(whatDoesACatSay == "I feel pretty, Oh, so pretty,I feel pretty and witty and bright!");

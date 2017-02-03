@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UMV.Reference.Tests</RootNamespace>
     <AssemblyName>UMV.Reference.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,12 +59,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Integration\Patterns\PipeAndFilterTests.cs" />
     <Compile Include="Integration\TrainerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mock\TrainerTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +75,13 @@
       <Project>{8a027039-3bfe-4ba2-9820-e3fb9b9b1666}</Project>
       <Name>UMV.Reference.ClassLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Patterns\UMV.Reference.Patterns.csproj">
+      <Project>{bfd098fb-1e4e-4c52-b785-72bba1ffcc7c}</Project>
+      <Name>UMV.Reference.Patterns</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

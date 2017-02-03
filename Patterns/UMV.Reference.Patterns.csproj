@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A027039-3BFE-4BA2-9820-E3FB9B9B1666}</ProjectGuid>
+    <ProjectGuid>{BFD098FB-1E4E-4C52-B785-72BBA1FFCC7C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UMV.Reference.ClassLibrary</RootNamespace>
-    <AssemblyName>UMV.Reference.ClassLibrary</AssemblyName>
+    <RootNamespace>UMV.Reference.Patterns</RootNamespace>
+    <AssemblyName>UMV.Reference.Patterns</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\ConsoleApplication\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,23 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\CatTrainer.cs" />
-    <Compile Include="Concrete\DogTrainer.cs" />
-    <Compile Include="Concrete\Cat.cs" />
-    <Compile Include="Interfaces\ICatTrainer.cs" />
-    <Compile Include="Interfaces\IDogTrainer.cs" />
-    <Compile Include="Ninject\ClassLibraryModule.cs" />
-    <Compile Include="Interfaces\ICat.cs" />
-    <Compile Include="Interfaces\IDog.cs" />
-    <Compile Include="Interfaces\ITrainer.cs" />
-    <Compile Include="Base\Trainer.cs" />
-    <Compile Include="Concrete\Dog.cs" />
-    <Compile Include="Interfaces\IPet.cs" />
+    <Compile Include="Pipeline\Models\Address.cs" />
+    <Compile Include="Pipeline\Models\HttpContext.cs" />
+    <Compile Include="Pipeline\Operations\LoggingOperation.cs" />
+    <Compile Include="Pipeline\Models\Member.cs" />
+    <Compile Include="Pipeline\Models\Message.cs" />
+    <Compile Include="Pipeline\Operations\ResponseOperation.cs" />
+    <Compile Include="Pipeline\Operations\TimingOperation.cs" />
+    <Compile Include="Pipeline\Operations\Operation.cs" />
+    <Compile Include="Pipeline\Operations\IOperation.cs" />
+    <Compile Include="Pipeline\Pipeline.cs" />
+    <Compile Include="Pipeline\PipelineBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
