@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using Ninject;
 using UMV.Reference.ClassLibrary.Interfaces;
 using UMV.Reference.ClassLibrary.Ninject;
@@ -14,29 +15,32 @@ namespace UMV.Reference.ConsoleApplication
         {
             PipelineBuilderExample();
 
+
+
             Console.ReadLine();
         }
 
         private static void PipelineExample()
         {
-            var context = new HttpContext();
+            var context = new Member();
 
-            new Pipeline<HttpContext>()
-            .Register(new TimingOperation())
-            .Register(new LoggingOperation())
-            .Register(new ResponseOperation())
+            new Pipeline<Member>()
+            .Register(new TimeToExecuteOperation<Member>())
             .Execute(context)
             .Wait();
         }
 
         private static void PipelineBuilderExample()
         {
-            var context = new HttpContext();
+            var context = new Member();
 
-            var pipeline = new PipelineBuilder<HttpContext>()
-            .Register(new TimingOperation())
-            .Register(new LoggingOperation())
-            .Register(new ResponseOperation())
+            var pipeline = new PipelineBuilder<Member>()
+            .Register(new TimeToExecuteOperation<Member>())
+            .Register(new LongRunningOperation())
+            .Register(new TimeToExecuteOperation<Member>())
+            .Register(new LongRunningOperation())
+            .Register(new TimeToExecuteOperation<Member>())
+            .Register(new LongRunningOperation())
             .Build();
 
             pipeline.Execute(context).Wait();

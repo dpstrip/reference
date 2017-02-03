@@ -42,12 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pipeline\Models\Address.cs" />
-    <Compile Include="Pipeline\Models\HttpContext.cs" />
-    <Compile Include="Pipeline\Operations\LoggingOperation.cs" />
     <Compile Include="Pipeline\Models\Member.cs" />
     <Compile Include="Pipeline\Models\Message.cs" />
-    <Compile Include="Pipeline\Operations\ResponseOperation.cs" />
-    <Compile Include="Pipeline\Operations\TimingOperation.cs" />
+    <Compile Include="Pipeline\Operations\TimeToExecuteOperation.cs" />
     <Compile Include="Pipeline\Operations\Operation.cs" />
     <Compile Include="Pipeline\Operations\IOperation.cs" />
     <Compile Include="Pipeline\Pipeline.cs" />
