@@ -2,10 +2,9 @@ using Ninject.Modules;
 using UMV.Reference.Patterns.Models;
 using UMV.Reference.Patterns.Operations;
 
-
-namespace UMV.Reference.ClassLibrary.Ninject
+namespace UMV.Reference.Patterns.Ninject
 {
-    public class ClassLibraryModule : NinjectModule
+    public class PatternsModule : NinjectModule
     {
         public override void Load()
         {

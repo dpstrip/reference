@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Auditible.cs" />
+    <Compile Include="Ninject\ClassLibraryModule.cs" />
+    <Compile Include="Base\ChangeTrackingBase.cs" />
     <Compile Include="Pipeline\Operations\AddMemberNameOperation.cs" />
     <Compile Include="Pipeline\Operations\IOperation.cs" />
     <Compile Include="Pipeline\Models\Address.cs" />
@@ -54,9 +57,7 @@
     <Compile Include="Pipeline\Pipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ninject\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

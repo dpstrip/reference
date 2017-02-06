@@ -9,6 +9,7 @@ namespace UMV.Reference.Patterns.Operations
         {
             
         }
+
         public Member Execute(Member context)
         {
             context.FirstName = "Craig";

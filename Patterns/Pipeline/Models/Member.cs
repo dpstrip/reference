@@ -1,6 +1,8 @@
-﻿namespace UMV.Reference.Patterns.Models
+﻿using UMV.Reference.Patterns.Base;
+
+namespace UMV.Reference.Patterns.Models
 {
-    public class Member
+    public class Member : ChangeTracking
     {
         public string FirstName { get; set; }
 

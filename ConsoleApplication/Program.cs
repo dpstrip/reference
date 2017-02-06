@@ -13,7 +13,15 @@ namespace UMV.Reference.ConsoleApplication
     {
         static void Main(string[] args)
         {
-            PipelineExample();
+            var member = new Member();
+
+            member.FirstName = "Craig";
+
+            member.Initialize();
+
+            member.FirstName = "CRAIG";
+
+            var changes = member.GetChanges();
 
             Console.ReadLine();
         }
