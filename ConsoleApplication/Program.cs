@@ -5,6 +5,7 @@ using UMV.Reference.ClassLibrary.Ninject;
 using UMV.Reference.Patterns;
 using UMV.Reference.Patterns.Aspects;
 using UMV.Reference.Patterns.Models;
+using UMV.Reference.Patterns.Operations;
 
 namespace UMV.Reference.ConsoleApplication
 {
@@ -12,8 +13,6 @@ namespace UMV.Reference.ConsoleApplication
     {
         static void Main(string[] args)
         {
-            //PipelineBuilderExample();
-
             PipelineExample();
 
             Console.ReadLine();
@@ -23,9 +22,13 @@ namespace UMV.Reference.ConsoleApplication
         {
             var context = new Member();
 
+            IOperation<Member> m = null;
+
+
             // Build up your pipeline
             var pipeline = new Pipeline<Member>()
-                .Register(member => { member.FirstName = "Craig"; throw new Exception("Test"); return member; });
+                .Register(m)
+                .Register(new AddMemberNameOperation());
 
             // Add aspects around the pipline 
             var exceptionLogginAspect = new ExceptionLoggingAspect<Member>(pipeline.Execute);

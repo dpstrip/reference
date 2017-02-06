@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pipeline\Operations\IOperation.cs" />
     <Compile Include="Pipeline\Models\Address.cs" />
     <Compile Include="Pipeline\Models\Member.cs" />
     <Compile Include="Pipeline\Models\Message.cs" />

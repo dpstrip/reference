@@ -1,14 +1,13 @@
-using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using UMV.Reference.Patterns.Operations;
 
 namespace UMV.Reference.Patterns
 {
     public class Pipeline<T>
     {
-        private readonly List<Func<T,T>> _operations = new List<Func<T,T>>();
+        private readonly List<IOperation<T>> _operations = new List<IOperation<T>>();
 
-        public Pipeline<T> Register(Func<T,T> operation)
+        public Pipeline<T> Register(IOperation<T> operation)
         {
             _operations.Add(operation);
             return this;
@@ -18,7 +17,7 @@ namespace UMV.Reference.Patterns
         {
             foreach (var operation in _operations)
             {
-                context = operation.Invoke(context);
+                context = operation.Execute(context);
             }
             return context;
         }
