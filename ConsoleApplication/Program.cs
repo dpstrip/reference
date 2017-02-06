@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Diagnostics.Eventing.Reader;
 using Ninject;
 using UMV.Reference.ClassLibrary.Interfaces;
 using UMV.Reference.ClassLibrary.Ninject;
 using UMV.Reference.Patterns;
+using UMV.Reference.Patterns.Aspects;
 using UMV.Reference.Patterns.Models;
-using UMV.Reference.Patterns.Operations;
 
 namespace UMV.Reference.ConsoleApplication
 {
@@ -20,30 +19,21 @@ namespace UMV.Reference.ConsoleApplication
             Console.ReadLine();
         }
 
-
-
         private static void PipelineExample()
         {
             var context = new Member();
 
-            context = new Pipeline<Member>()
-            .Register(new TimeToExecuteOperation<Member>())
-            .Register(new TimeToExecuteOperation<Member>())
-            .Register(new TimeToExecuteOperation<Member>())
-            .Execute(context);
-        }
+            // Build up your pipeline
+            var pipeline = new Pipeline<Member>()
+                .Register(member => { member.FirstName = "Craig"; throw new Exception("Test"); return member; });
 
-        private static void PipelineBuilderExample()
-        {
-            var context = new Member();
+            // Add aspects around the pipline 
+            var exceptionLogginAspect = new ExceptionLoggingAspect<Member>(pipeline.Execute);
 
-            var pipeline = new PipelineBuilder<Member>()
-            .Register(new TimeToExecuteOperation<Member>())
-            .Register(new TimeToExecuteOperation<Member>())
-            .Register(new TimeToExecuteOperation<Member>())
-            .Build();
+            // Execute 
+            context = exceptionLogginAspect.Execute(context);
 
-            context = pipeline.Execute(context);
+            Console.WriteLine(context.FirstName);
         }
 
         private static void IoCExample()

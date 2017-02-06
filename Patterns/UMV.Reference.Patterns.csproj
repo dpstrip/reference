@@ -44,10 +44,7 @@
     <Compile Include="Pipeline\Models\Address.cs" />
     <Compile Include="Pipeline\Models\Member.cs" />
     <Compile Include="Pipeline\Models\Message.cs" />
-    <Compile Include="Pipeline\Operations\TimeToExecuteOperation.cs" />
-    <Compile Include="Pipeline\Operations\Operation.cs" />
-    <Compile Include="Pipeline\Operations\IOperation.cs" />
-    <Compile Include="Pipeline\PipelineBuilder.cs" />
+    <Compile Include="Pipeline\Aspects\ExceptionLoggingAspect.cs" />
     <Compile Include="Pipeline\Pipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
