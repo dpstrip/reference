@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 
 namespace UMV.Reference.Patterns.Operations
 {
@@ -19,13 +18,11 @@ namespace UMV.Reference.Patterns.Operations
             }
         }
 
-        Task IOperation<T>.Execute(T context)
+        T IOperation<T>.Execute(T context)
         {
-            return Execute(context, ctx => _next == null
-                ? Task.CompletedTask
-                : _next.Execute(ctx));
+            return Execute(context, ctx => _next == null ? default(T) : _next.Execute(ctx));
         }
 
-        protected abstract Task Execute(T context, Func<T, Task> next);
+        protected abstract T Execute(T context, Func<T, T> next);
     }
 }

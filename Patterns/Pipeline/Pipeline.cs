@@ -1,9 +1,8 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using UMV.Reference.Patterns.Operations;
 
 namespace UMV.Reference.Patterns
 {
-
     public class Pipeline<T>
     {
         private IOperation<T> _root;
@@ -22,7 +21,7 @@ namespace UMV.Reference.Patterns
             return this;
         }
 
-        public Task Execute(T context)
+        public T Execute(T context)
         {
             return _root.Execute(context);
         }

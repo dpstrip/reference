@@ -13,21 +13,24 @@ namespace UMV.Reference.ConsoleApplication
     {
         static void Main(string[] args)
         {
-            PipelineBuilderExample();
+            //PipelineBuilderExample();
 
-
+            PipelineExample();
 
             Console.ReadLine();
         }
+
+
 
         private static void PipelineExample()
         {
             var context = new Member();
 
-            new Pipeline<Member>()
+            context = new Pipeline<Member>()
             .Register(new TimeToExecuteOperation<Member>())
-            .Execute(context)
-            .Wait();
+            .Register(new TimeToExecuteOperation<Member>())
+            .Register(new TimeToExecuteOperation<Member>())
+            .Execute(context);
         }
 
         private static void PipelineBuilderExample()
@@ -36,14 +39,11 @@ namespace UMV.Reference.ConsoleApplication
 
             var pipeline = new PipelineBuilder<Member>()
             .Register(new TimeToExecuteOperation<Member>())
-            .Register(new LongRunningOperation())
             .Register(new TimeToExecuteOperation<Member>())
-            .Register(new LongRunningOperation())
             .Register(new TimeToExecuteOperation<Member>())
-            .Register(new LongRunningOperation())
             .Build();
 
-            pipeline.Execute(context).Wait();
+            context = pipeline.Execute(context);
         }
 
         private static void IoCExample()

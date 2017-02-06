@@ -47,8 +47,8 @@
     <Compile Include="Pipeline\Operations\TimeToExecuteOperation.cs" />
     <Compile Include="Pipeline\Operations\Operation.cs" />
     <Compile Include="Pipeline\Operations\IOperation.cs" />
-    <Compile Include="Pipeline\Pipeline.cs" />
     <Compile Include="Pipeline\PipelineBuilder.cs" />
+    <Compile Include="Pipeline\Pipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

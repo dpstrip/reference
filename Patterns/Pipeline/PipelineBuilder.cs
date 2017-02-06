@@ -5,6 +5,7 @@ using UMV.Reference.Patterns.Operations;
 
 namespace UMV.Reference.Patterns
 {
+
     public class PipelineBuilder<T>
     {
         private readonly List<Func<IOperation<T>>> _filters = new List<Func<IOperation<T>>>();
