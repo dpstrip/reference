@@ -1,6 +1,6 @@
 ﻿namespace UMV.Reference.Patterns.Models
 {
-    public class MemberMessage
+    public class Message
     {
         public string FirstName { get; set; }
 

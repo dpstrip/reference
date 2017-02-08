@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Auditible.cs" />
-    <Compile Include="Ninject\ClassLibraryModule.cs" />
+    <Compile Include="Base\Interfaces\IAuditible.cs" />
+    <Compile Include="Base\Interfaces\ISpannable.cs" />
+    <Compile Include="Base\Spannable.cs" />
+    <Compile Include="Ninject\PatternsModule.cs" />
     <Compile Include="Base\ChangeTrackingBase.cs" />
     <Compile Include="Pipeline\Operations\AddMemberNameOperation.cs" />
     <Compile Include="Pipeline\Operations\IOperation.cs" />
@@ -56,6 +59,12 @@
     <Compile Include="Pipeline\Aspects\ExceptionLoggingAspect.cs" />
     <Compile Include="Pipeline\Pipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\LogRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ILogRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IMemberRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IMessageRepository.cs" />
+    <Compile Include="Repositories\MemberRepository.cs" />
+    <Compile Include="Repositories\MessageRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

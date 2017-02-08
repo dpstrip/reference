@@ -32,7 +32,6 @@ namespace UMV.Reference.ConsoleApplication
 
             IOperation<Member> m = null;
 
-
             // Build up your pipeline
             var pipeline = new Pipeline<Member>()
                 .Register(m)

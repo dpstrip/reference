@@ -1,8 +1,9 @@
 using System;
+using UMV.Reference.Patterns.Base.Interfaces;
 
 namespace UMV.Reference.Patterns.Base
 {
-    public abstract class Auditible
+    public abstract class Auditible : IAuditible
     {
         public string CreateUser { get; set; }
 

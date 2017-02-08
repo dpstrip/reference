@@ -22,4 +22,9 @@ namespace UMV.Reference.Patterns
             return context;
         }
     }
+
+    public class PipelineDefinition
+    {
+        
+    }
 }
