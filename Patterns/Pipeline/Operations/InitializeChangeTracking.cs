@@ -3,13 +3,13 @@ using UMV.Reference.Patterns.Operations.Interfaces;
 
 namespace UMV.Reference.Patterns.Operations
 {
-    public class InitializeChangeTracking : IOperation<IChangeTrackable>
+    public class InitializeChangeTracking<T> : IOperation<T> where T : IChangeTracker
     {
-        public IChangeTrackable Execute(IChangeTrackable changeTrackable)
+        public T Execute(T changeTracker)
         {
-            changeTrackable.InitializeChangeState();
+            changeTracker.InitializeChangeState();
 
-            return changeTrackable;
+            return changeTracker;
         }
     }
 }

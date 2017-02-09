@@ -38,13 +38,13 @@ namespace UMV.Reference.ConsoleApplication
             var kernel = new StandardKernel(new PatternsModule());
             var context = new Member();
 
-            var trackChanges = kernel.Get<IOperation<IChangeTrackable>>("TrackChanges");
-            var addAuditInformation = kernel.Get<IOperation<IAuditible>>("AddAuditInformation");
+            var trackChanges = kernel.Get<IOperation<Member>>("MemberChangeTracker");
+            var addAuditInformation = kernel.Get<IOperation<Member>>("AddAuditInformation");
             var updateMemberNameToCraigOperation = kernel.Get<IOperation<Member>>("UpdateMemberNameToCraigOperation");
-            var initializeChangeTracking = kernel.Get<IOperation<IChangeTrackable>>("InitializeChangeTracking");
+            var initializeChangeTracking = kernel.Get<IOperation<Member>>("InitializeChangeTracking");
 
             // Build up your pipeline
-            var pipeline = new Pipeline<IChangeTrackable>()
+            var pipeline = new Pipeline<Member>()
                 .Register(initializeChangeTracking)
                 .Register(addAuditInformation)
                 .Register(updateMemberNameToCraigOperation)
@@ -52,10 +52,10 @@ namespace UMV.Reference.ConsoleApplication
                 ;
 
             // Add aspects around the pipline 
-            var exceptionLogginAspect = new ExceptionLoggingAspect<IChangeTrackable>(pipeline.Execute);
+            var exceptionLogginAspect = new ExceptionLoggingAspect<Member>(pipeline.Execute);
 
             // Execute 
-            context = exceptionLogginAspect.Execute(context) as Member;
+            context = exceptionLogginAspect.Execute(context) ;
 
             Console.WriteLine(context.FirstName);
         }

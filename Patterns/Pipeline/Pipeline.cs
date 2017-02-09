@@ -4,7 +4,7 @@ using UMV.Reference.Patterns.Operations.Interfaces;
 
 namespace UMV.Reference.Patterns
 {
-    public class Pipeline<T> where T : IChangeTrackable
+    public class Pipeline<T> where T : IChangeTracker
     {
         private readonly List<IOperation<T>> _operations = new List<IOperation<T>>();
 

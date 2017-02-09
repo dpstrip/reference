@@ -17,10 +17,10 @@ namespace UMV.Reference.Patterns.Ninject
             Bind<IMemberRepository>().To<MemberRepository>();
             Bind<IMessageRepository>().To<MessageRepository>();
 
-            Bind<IOperation<IChangeTrackable>>().To<TrackChanges>().Named("TrackChanges");
-            Bind<IOperation<IAuditible>>().To<AddAuditInformation>().Named("AddAuditInformation");
+            Bind<IOperation<Member>>().To<ChangeTracker<Member>>().Named("MemberChangeTracker");
+            Bind<IOperation<Member>>().To<AddAuditInformation<Member>>().Named("AddAuditInformation");
             Bind<IOperation<Member>>().To<UpdateMemberNameToCraigOperation>().Named("UpdateMemberNameToCraigOperation");
-            Bind<IOperation<IChangeTrackable>>().To<InitializeChangeTracking>().Named("InitializeChangeTracking");
+            Bind<IOperation<Member>>().To<InitializeChangeTracking<Member>>().Named("InitializeChangeTracking");
 
         }
     }

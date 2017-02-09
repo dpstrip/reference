@@ -2,7 +2,7 @@
 
 namespace UMV.Reference.Patterns.Models
 {
-    public class Address: ChangeTrackable
+    public class Address: ChangeTracker
     {
         public string AddressLine1 { get; set; }
 

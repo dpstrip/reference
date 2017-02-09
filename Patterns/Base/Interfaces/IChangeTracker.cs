@@ -2,7 +2,7 @@
 
 namespace UMV.Reference.Patterns.Base.Interfaces
 {
-    public interface IChangeTrackable : IAuditible
+    public interface IChangeTracker : IAuditible
     {
         ChangeState GetChangeState();
 

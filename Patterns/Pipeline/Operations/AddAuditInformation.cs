@@ -6,9 +6,9 @@ using UMV.Reference.Patterns.Operations.Interfaces;
 
 namespace UMV.Reference.Patterns.Operations
 {
-    public class AddAuditInformation : IOperation<IAuditible>
+    public class AddAuditInformation<T> : IOperation<T> where T : IAuditible
     {
-        public IAuditible Execute(IAuditible auditible)
+        public T Execute(T auditible)
         {
             if (auditible.Id == 0)
             {

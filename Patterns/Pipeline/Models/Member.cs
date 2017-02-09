@@ -2,7 +2,7 @@
 
 namespace UMV.Reference.Patterns.Models
 {
-    public class Member : ChangeTrackable
+    public class Member : ChangeTracker
     {
         public string FirstName { get; set; }
 
