@@ -1,9 +1,10 @@
 using System.Collections.Generic;
-using UMV.Reference.Patterns.Operations;
+using UMV.Reference.Patterns.Base.Interfaces;
+using UMV.Reference.Patterns.Operations.Interfaces;
 
 namespace UMV.Reference.Patterns
 {
-    public class Pipeline<T>
+    public class Pipeline<T> where T : IChangeTrackable
     {
         private readonly List<IOperation<T>> _operations = new List<IOperation<T>>();
 
@@ -21,10 +22,5 @@ namespace UMV.Reference.Patterns
             }
             return context;
         }
-    }
-
-    public class PipelineDefinition
-    {
-        
     }
 }

@@ -1,4 +1,4 @@
-namespace UMV.Reference.Patterns.Operations
+namespace UMV.Reference.Patterns.Operations.Interfaces
 {
     public interface IOperation<T>
     {

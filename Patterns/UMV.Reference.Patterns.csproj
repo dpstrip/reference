@@ -45,20 +45,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\Auditible.cs" />
+    <Compile Include="Base\Enums\ObjectState.cs" />
+    <Compile Include="Base\Models\Auditible.cs" />
+    <Compile Include="Base\Models\ChangeState.cs" />
+    <Compile Include="Base\Models\Identifiable.cs" />
+    <Compile Include="Base\Interfaces\IChangeTrackable.cs" />
     <Compile Include="Base\Interfaces\IAuditible.cs" />
+    <Compile Include="Base\Interfaces\IIdentifiable.cs" />
     <Compile Include="Base\Interfaces\ISpannable.cs" />
-    <Compile Include="Base\Spannable.cs" />
+    <Compile Include="Base\Models\ChangedProperty.cs" />
+    <Compile Include="Base\Models\Spannable.cs" />
     <Compile Include="Ninject\PatternsModule.cs" />
-    <Compile Include="Base\ChangeTrackingBase.cs" />
-    <Compile Include="Pipeline\Operations\AddMemberNameOperation.cs" />
-    <Compile Include="Pipeline\Operations\IOperation.cs" />
+    <Compile Include="Base\ChangeTrackable.cs" />
+    <Compile Include="Pipeline\Operations\AddAuditInformation.cs" />
+    <Compile Include="Pipeline\Operations\UpdateMemberNameToCraigOperation.cs" />
+    <Compile Include="Pipeline\Operations\InitializeChangeTracking.cs" />
+    <Compile Include="Pipeline\Operations\Interfaces\IOperation.cs" />
     <Compile Include="Pipeline\Models\Address.cs" />
     <Compile Include="Pipeline\Models\Member.cs" />
     <Compile Include="Pipeline\Models\Message.cs" />
     <Compile Include="Pipeline\Aspects\ExceptionLoggingAspect.cs" />
+    <Compile Include="Pipeline\Operations\TrackChanges.cs" />
     <Compile Include="Pipeline\Pipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AuditRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IAuditRepository.cs" />
     <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\Interfaces\ILogRepository.cs" />
     <Compile Include="Repositories\Interfaces\IMemberRepository.cs" />

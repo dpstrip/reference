@@ -4,8 +4,10 @@ using UMV.Reference.ClassLibrary.Interfaces;
 using UMV.Reference.ClassLibrary.Ninject;
 using UMV.Reference.Patterns;
 using UMV.Reference.Patterns.Aspects;
+using UMV.Reference.Patterns.Base.Interfaces;
 using UMV.Reference.Patterns.Models;
-using UMV.Reference.Patterns.Operations;
+using UMV.Reference.Patterns.Ninject;
+using UMV.Reference.Patterns.Operations.Interfaces;
 
 namespace UMV.Reference.ConsoleApplication
 {
@@ -13,35 +15,47 @@ namespace UMV.Reference.ConsoleApplication
     {
         static void Main(string[] args)
         {
-            var member = new Member();
-
-            member.FirstName = "Craig";
-
-            member.Initialize();
-
-            member.FirstName = "CRAIG";
-
-            var changes = member.GetChanges();
+            PipelineExample();
 
             Console.ReadLine();
         }
 
+        private static void TestChangeTracking()
+        {
+            var member = new Member();
+
+            member.FirstName = "Craig";
+
+            member.InitializeChangeState();
+
+            member.FirstName = "CRAIG";
+
+            var changes = member.GetChangeState();
+        }
+
         private static void PipelineExample()
         {
+            var kernel = new StandardKernel(new PatternsModule());
             var context = new Member();
 
-            IOperation<Member> m = null;
+            var trackChanges = kernel.Get<IOperation<IChangeTrackable>>("TrackChanges");
+            var addAuditInformation = kernel.Get<IOperation<IAuditible>>("AddAuditInformation");
+            var updateMemberNameToCraigOperation = kernel.Get<IOperation<Member>>("UpdateMemberNameToCraigOperation");
+            var initializeChangeTracking = kernel.Get<IOperation<IChangeTrackable>>("InitializeChangeTracking");
 
             // Build up your pipeline
-            var pipeline = new Pipeline<Member>()
-                .Register(m)
-                .Register(new AddMemberNameOperation());
+            var pipeline = new Pipeline<IChangeTrackable>()
+                .Register(initializeChangeTracking)
+                .Register(addAuditInformation)
+                .Register(updateMemberNameToCraigOperation)
+                .Register(trackChanges)
+                ;
 
             // Add aspects around the pipline 
-            var exceptionLogginAspect = new ExceptionLoggingAspect<Member>(pipeline.Execute);
+            var exceptionLogginAspect = new ExceptionLoggingAspect<IChangeTrackable>(pipeline.Execute);
 
             // Execute 
-            context = exceptionLogginAspect.Execute(context);
+            context = exceptionLogginAspect.Execute(context) as Member;
 
             Console.WriteLine(context.FirstName);
         }

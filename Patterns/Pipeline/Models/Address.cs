@@ -1,6 +1,8 @@
-﻿namespace UMV.Reference.Patterns.Models
+﻿using UMV.Reference.Patterns.Base;
+
+namespace UMV.Reference.Patterns.Models
 {
-    public class Address
+    public class Address: ChangeTrackable
     {
         public string AddressLine1 { get; set; }
 

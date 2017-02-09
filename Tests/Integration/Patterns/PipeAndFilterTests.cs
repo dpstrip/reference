@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using UMV.Reference.Patterns.PipeAndFilter;
+﻿using NUnit.Framework;
 
 namespace UMV.Reference.Tests.Integration.Patterns
 {
