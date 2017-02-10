@@ -1,4 +1,5 @@
-﻿using UMV.Reference.Patterns.Base;
+﻿using System.Collections.Generic;
+using UMV.Reference.Patterns.Base;
 
 namespace UMV.Reference.Patterns.Models
 {
@@ -7,5 +8,7 @@ namespace UMV.Reference.Patterns.Models
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public IList<Address> Addresses { get; set; }
     }
 }

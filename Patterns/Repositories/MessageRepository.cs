@@ -5,12 +5,13 @@ namespace UMV.Reference.Patterns.Repositories
 {
     public class MessageRepository : IMessageRepository
     {
-        public Message Get()
+        public Message Get(int id)
         {
             return new Message
             {
-                FirstName = "Craig",
-                LastName = "Selbert",
+                Id = id,
+                FirstName = "Craig One",
+                LastName = "Selbert One",
                 AddressLine1 = "723 Hilltop Terrace Dr",
                 City = "Eureka"
             };

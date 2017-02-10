@@ -1,6 +1,8 @@
-﻿namespace UMV.Reference.Patterns.Models
+﻿using UMV.Reference.Patterns.Base.Models;
+
+namespace UMV.Reference.Patterns.Models
 {
-    public class Message
+    public class Message : Identifiable
     {
         public string FirstName { get; set; }
 

@@ -58,7 +58,8 @@
     <Compile Include="Ninject\PatternsModule.cs" />
     <Compile Include="Base\ChangeTracker.cs" />
     <Compile Include="Pipeline\Operations\AddAuditInformation.cs" />
-    <Compile Include="Pipeline\Operations\UpdateMemberNameToCraigOperation.cs" />
+    <Compile Include="Pipeline\Operations\GetMemberFromRepositoryById.cs" />
+    <Compile Include="Pipeline\Operations\UpdateMemberFromMessageOperation.cs" />
     <Compile Include="Pipeline\Operations\InitializeChangeTracking.cs" />
     <Compile Include="Pipeline\Operations\Interfaces\IOperation.cs" />
     <Compile Include="Pipeline\Models\Address.cs" />

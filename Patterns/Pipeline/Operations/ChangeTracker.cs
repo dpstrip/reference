@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using System.Threading;
 using UMV.Reference.Patterns.Base.Enums;
 using UMV.Reference.Patterns.Base.Interfaces;
 using UMV.Reference.Patterns.Operations.Interfaces;
@@ -20,9 +22,15 @@ namespace UMV.Reference.Patterns.Operations
             var changes = changeTrackable.GetChangeState();
 
             if (changes.ChangedProperties.Any())
+            {
                 changeTrackable.ObjectState = ObjectState.Changed;
-            else
+                changeTrackable.UpdateDate = DateTime.UtcNow;
+                changeTrackable.UpdateUser = Thread.CurrentPrincipal.Identity.Name;
+            }
+            else if (changeTrackable.ObjectState != ObjectState.New)
+            {
                 changeTrackable.ObjectState = ObjectState.NoChange;
+            }
 
             _auditRepository.Save(changes);
 

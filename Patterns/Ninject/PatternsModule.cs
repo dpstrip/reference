@@ -1,5 +1,4 @@
 using Ninject.Modules;
-using UMV.Reference.Patterns.Base.Interfaces;
 using UMV.Reference.Patterns.Models;
 using UMV.Reference.Patterns.Operations;
 using UMV.Reference.Patterns.Operations.Interfaces;
@@ -19,7 +18,8 @@ namespace UMV.Reference.Patterns.Ninject
 
             Bind<IOperation<Member>>().To<ChangeTracker<Member>>().Named("MemberChangeTracker");
             Bind<IOperation<Member>>().To<AddAuditInformation<Member>>().Named("AddAuditInformation");
-            Bind<IOperation<Member>>().To<UpdateMemberNameToCraigOperation>().Named("UpdateMemberNameToCraigOperation");
+            Bind<IOperation<Member>>().To<GetMemberFromRepositoryById>().Named("GetMemberFromRepositoryById");
+            Bind<IOperation<Member>>().To<UpdateMemberFromMessageOperation>().Named("UpdateMemberFromMessageOperation");
             Bind<IOperation<Member>>().To<InitializeChangeTracking<Member>>().Named("InitializeChangeTracking");
 
         }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,13 +9,13 @@ namespace UMV.Reference.Patterns.Base
     public abstract class ChangeTracker : Auditible, IChangeTracker
     {
         private readonly List<PropertyInfo> _properties;
-        private readonly List<PropertyInfo> _propertiesToIgnore;
+        private readonly List<string> _propertiesToIgnore;
         private readonly Dictionary<string, object> _originalValues = new Dictionary<string, object>();
 
         protected ChangeTracker()
         {
-            _propertiesToIgnore = typeof(Auditible).GetProperties().ToList();
-            _properties = GetType().GetProperties().Where(x => !_propertiesToIgnore.Contains(x)).ToList();
+            _propertiesToIgnore = typeof(Auditible).GetProperties().Select(x=> x.Name).ToList();
+            _properties = GetType().GetProperties().Where(x => !_propertiesToIgnore.Contains(x.Name)).ToList();
         }
 
         public void InitializeChangeState()
