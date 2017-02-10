@@ -47,7 +47,6 @@ namespace UMV.Reference.Tests.Patterns
             _auditRepositoryMock.Verify(x => x.Save(It.IsAny<ChangeState>()), Times.Once);
         }
 
-
         [Test]
         public void ChangeTracker_NoPropertiesChangedNew_SetsObectStateUpdateDateAndUser()
         {

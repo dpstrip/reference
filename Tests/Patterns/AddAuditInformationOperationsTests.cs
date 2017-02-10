@@ -41,7 +41,6 @@ namespace UMV.Reference.Tests.Patterns
             Assert.IsTrue(_auditable.ObjectState == ObjectState.New);
         }
 
-
         [Test]
         public void AddAuditInformation_IdIsNotZero_SetsObectStateUpdateDateAndUser()
         {
