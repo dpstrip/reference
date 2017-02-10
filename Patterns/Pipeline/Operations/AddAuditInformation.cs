@@ -14,8 +14,8 @@ namespace UMV.Reference.Patterns.Operations
             {
                 auditible.ObjectState = ObjectState.New;
 
-                auditible.UpdateDate = DateTime.UtcNow;
-                auditible.UpdateUser = Thread.CurrentPrincipal.Identity.Name;
+                auditible.CreateDate = DateTime.UtcNow;
+                auditible.CreateUser = Thread.CurrentPrincipal.Identity.Name;
             }
             else
             {

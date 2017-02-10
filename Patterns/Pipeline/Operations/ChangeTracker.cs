@@ -8,7 +8,7 @@ using UMV.Reference.Patterns.Repositories.Interfaces;
 
 namespace UMV.Reference.Patterns.Operations
 {
-    public class ChangeTracker<T> : IOperation<T> where T : IChangeTracker
+    public class ChangeTracker<T> : IOperation<T> where T : ITrackChanges
     {
         private readonly IAuditRepository _auditRepository;
 

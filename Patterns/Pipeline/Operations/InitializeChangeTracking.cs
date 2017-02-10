@@ -3,7 +3,7 @@ using UMV.Reference.Patterns.Operations.Interfaces;
 
 namespace UMV.Reference.Patterns.Operations
 {
-    public class InitializeChangeTracking<T> : IOperation<T> where T : IChangeTracker
+    public class InitializeChangeTracking<T> : IOperation<T> where T : ITrackChanges
     {
         public T Execute(T changeTracker)
         {

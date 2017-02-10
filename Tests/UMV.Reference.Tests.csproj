@@ -59,7 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patterns\PipeAndFilterTests.cs" />
+    <Compile Include="Patterns\ChangeTrackerOperationsTests.cs" />
+    <Compile Include="Patterns\AddAuditInformationOperationsTests.cs" />
     <Compile Include="Integration\TrainerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mock\TrainerTests.cs" />

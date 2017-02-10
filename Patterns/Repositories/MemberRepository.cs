@@ -1,4 +1,5 @@
 using System;
+using UMV.Reference.Patterns.Base.Enums;
 using UMV.Reference.Patterns.Models;
 using UMV.Reference.Patterns.Repositories.Interfaces;
 
@@ -14,7 +15,8 @@ namespace UMV.Reference.Patterns.Repositories
                 FirstName = "Craig",
                 LastName = "Selbert",
                 CreateUser = "Ken",
-                CreateDate = DateTime.UtcNow.AddDays(-7)
+                CreateDate = DateTime.UtcNow.AddDays(-7),
+                ObjectState = ObjectState.FromDatabase
             };
         }
 

@@ -13,6 +13,6 @@ namespace UMV.Reference.Patterns.Base.Interfaces
 
         string UpdateUser { get; set; }
 
-        DateTime UpdateDate { get; set; }
+        DateTime? UpdateDate { get; set; }
     }
 }

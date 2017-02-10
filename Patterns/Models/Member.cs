@@ -3,7 +3,7 @@ using UMV.Reference.Patterns.Base;
 
 namespace UMV.Reference.Patterns.Models
 {
-    public class Member : ChangeTracker
+    public class Member : TrackChanges
     {
         public string FirstName { get; set; }
 

@@ -49,14 +49,14 @@
     <Compile Include="Base\Models\Auditible.cs" />
     <Compile Include="Base\Models\ChangeState.cs" />
     <Compile Include="Base\Models\Identifiable.cs" />
-    <Compile Include="Base\Interfaces\IChangeTracker.cs" />
+    <Compile Include="Base\Interfaces\ITrackChanges.cs" />
     <Compile Include="Base\Interfaces\IAuditible.cs" />
     <Compile Include="Base\Interfaces\IIdentifiable.cs" />
     <Compile Include="Base\Interfaces\ISpannable.cs" />
     <Compile Include="Base\Models\ChangedProperty.cs" />
     <Compile Include="Base\Models\Spannable.cs" />
     <Compile Include="Ninject\PatternsModule.cs" />
-    <Compile Include="Base\ChangeTracker.cs" />
+    <Compile Include="Base\TrackChanges.cs" />
     <Compile Include="Pipeline\Models\OperationDefinition.cs" />
     <Compile Include="Pipeline\Operations\AddAuditInformation.cs" />
     <Compile Include="Pipeline\Operations\GetMemberFromRepositoryById.cs" />

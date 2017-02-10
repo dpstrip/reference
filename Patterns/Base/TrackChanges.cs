@@ -6,13 +6,13 @@ using UMV.Reference.Patterns.Base.Models;
 
 namespace UMV.Reference.Patterns.Base
 {
-    public abstract class ChangeTracker : Auditible, IChangeTracker
+    public abstract class TrackChanges : Auditible, ITrackChanges
     {
         private readonly List<PropertyInfo> _properties;
         private readonly List<string> _propertiesToIgnore;
         private readonly Dictionary<string, object> _originalValues = new Dictionary<string, object>();
 
-        protected ChangeTracker()
+        protected TrackChanges()
         {
             _propertiesToIgnore = typeof(Auditible).GetProperties().Select(x=> x.Name).ToList();
             _properties = GetType().GetProperties().Where(x => !_propertiesToIgnore.Contains(x.Name)).ToList();

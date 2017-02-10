@@ -12,7 +12,7 @@ namespace UMV.Reference.Patterns.Base.Models
 
         public string UpdateUser { get; set; }
 
-        public DateTime UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
 
         public ObjectState ObjectState { get; set; }
     }

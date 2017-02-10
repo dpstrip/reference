@@ -15,7 +15,7 @@ namespace UMV.Reference.Patterns
             _kernel = kernel;
         }
 
-        public Pipeline<T> Build<T>(PipelineDefinition pipelineDefinition) where T : IChangeTracker
+        public Pipeline<T> Build<T>(PipelineDefinition pipelineDefinition) where T : ITrackChanges
         {
             var pipleline = new Pipeline<T>();
 
