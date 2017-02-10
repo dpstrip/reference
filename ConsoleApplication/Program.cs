@@ -9,6 +9,7 @@ using UMV.Reference.Patterns.Aspects;
 using UMV.Reference.Patterns.Models;
 using UMV.Reference.Patterns.Ninject;
 using UMV.Reference.Patterns.Operations.Interfaces;
+using UMV.Reference.Patterns.Repositories.Interfaces;
 
 namespace UMV.Reference.ConsoleApplication
 {
@@ -18,20 +19,25 @@ namespace UMV.Reference.ConsoleApplication
         {
             Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("Travis"), new[] { "Administrator" });
 
-            PipelineExample();
+            PipelineBuilderExample();
 
             Console.ReadLine();
         }
 
-        private static void TestChangeTracking()
+        private static void PipelineBuilderExample()
         {
-            var member = new Member { FirstName = "Craig" };
+            var kernel = new StandardKernel(new PatternsModule());
 
-            member.InitializeChangeState();
+            var pipelineBuilder = kernel.Get<PipelineDefinitionBuilder>();
+            var pipelineDefinitionRepository = kernel.Get<IPipelineDefinitionRepository>();
 
-            member.FirstName = "CRAIG";
+            var pipelineDefinition = pipelineDefinitionRepository.Get(1);
 
-            var changes = member.GetChangeState();
+            var pipeline = pipelineBuilder.Build<Member>(pipelineDefinition);
+
+            var member = pipeline.Execute(new Member {Id = 12});
+
+            Console.WriteLine(member.FirstName);
         }
 
         private static void PipelineExample()
@@ -62,6 +68,17 @@ namespace UMV.Reference.ConsoleApplication
             member = exceptionLogginAspect.Execute(member);
 
             Console.WriteLine(member.FirstName);
+        }
+
+        private static void TestChangeTracking()
+        {
+            var member = new Member { FirstName = "Craig" };
+
+            member.InitializeChangeState();
+
+            member.FirstName = "CRAIG";
+
+            var changes = member.GetChangeState();
         }
 
         private static void IoCExample()

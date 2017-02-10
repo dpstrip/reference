@@ -11,10 +11,13 @@ namespace UMV.Reference.Patterns.Ninject
     {
         public override void Load()
         {
+            Bind<PipelineDefinition>().ToSelf();
+
             Bind<ILogRepository>().To<LogRepository>();
             Bind<IAuditRepository>().To<AuditRepository>();
             Bind<IMemberRepository>().To<MemberRepository>();
             Bind<IMessageRepository>().To<MessageRepository>();
+            Bind<IPipelineDefinitionRepository>().To<PipelineDefinitionRepository>();
 
             Bind<IOperation<Member>>().To<ChangeTracker<Member>>().Named("MemberChangeTracker");
             Bind<IOperation<Member>>().To<AddAuditInformation<Member>>().Named("AddAuditInformation");
