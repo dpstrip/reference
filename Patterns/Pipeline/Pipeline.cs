@@ -19,6 +19,11 @@ namespace UMV.Reference.Patterns
             foreach (var operation in _operations)
             {
                 context = operation.Execute(context);
+
+                // If the executed operation set the Stop to true
+                // Exit out of executin the rest of the operations
+                if (operation.Stop)
+                    return context;
             }
             return context;
         }

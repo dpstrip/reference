@@ -32,5 +32,7 @@ namespace UMV.Reference.Patterns.Operations
 
             return member;
         }
+
+        public bool Stop { get; set; }
     }
 }

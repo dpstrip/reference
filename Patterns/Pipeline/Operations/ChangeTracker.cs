@@ -36,5 +36,7 @@ namespace UMV.Reference.Patterns.Operations
 
             return changeTrackable;
         }
+
+        public bool Stop { get; set; }
     }
 }

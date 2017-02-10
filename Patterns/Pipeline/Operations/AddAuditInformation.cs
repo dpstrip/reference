@@ -25,5 +25,7 @@ namespace UMV.Reference.Patterns.Operations
 
             return auditible;
         }
+
+        public bool Stop { get; set; }
     }
 }

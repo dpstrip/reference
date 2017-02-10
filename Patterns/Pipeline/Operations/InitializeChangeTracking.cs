@@ -11,5 +11,7 @@ namespace UMV.Reference.Patterns.Operations
 
             return changeTracker;
         }
+
+        public bool Stop { get; set; }
     }
 }

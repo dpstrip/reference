@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace UMV.Reference.Tests.Integration.Patterns
+namespace UMV.Reference.Tests.Patterns
 {
     [TestFixture]
     public class PipeAndFilterTests
