@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMV.Reference.Tests", "Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMV.Reference.Patterns", "Patterns\UMV.Reference.Patterns.csproj", "{BFD098FB-1E4E-4C52-B785-72BBA1FFCC7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMV.Reference.Performance", "Performance\UMV.Reference.Performance.csproj", "{CC761B1E-109A-4609-BCDE-7397483752C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BFD098FB-1E4E-4C52-B785-72BBA1FFCC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFD098FB-1E4E-4C52-B785-72BBA1FFCC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFD098FB-1E4E-4C52-B785-72BBA1FFCC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC761B1E-109A-4609-BCDE-7397483752C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC761B1E-109A-4609-BCDE-7397483752C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC761B1E-109A-4609-BCDE-7397483752C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC761B1E-109A-4609-BCDE-7397483752C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
